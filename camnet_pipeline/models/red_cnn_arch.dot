@@ -1,0 +1,42 @@
+digraph RED_CNN {
+    rankdir=LR;
+    node [shape=record, style=filled, fontname=Helvetica];
+
+    // Nodes
+    LDCT [label="LDCT (Low‑dose CT)", fillcolor=lightgoldenrod];
+    CEELPA [label="CEELPA\n(Contrast Enh. & Edge Lesion Pres.)", fillcolor=lightblue];
+    Enc1 [label="Enc1\n(5×5 Conv)", fillcolor=lightgreen];
+    E2 [label="E2\nRCA → MSFE (d=1,2,3)", fillcolor=lightgreen];
+    E3 [label="E3\nRCA → MSFE (d=1,2,3)", fillcolor=lightgreen];
+    E4 [label="E4\nRCA → MSFE (d=1,2,3)", fillcolor=lightgreen];
+    Bottleneck [label="Bottleneck\n(Enc_Bottleneck)", fillcolor=orange];
+    Dec6 [label="dec6\n5×5 Conv + edge_mask", fillcolor=lightgray];
+    Dec7 [label="dec7\n5×5 Conv", fillcolor=lightgray];
+    Dec8 [label="dec8\n5×5 Conv + contrast_mask", fillcolor=lightgray];
+    Dec9 [label="dec9\n5×5 Conv", fillcolor=lightgray];
+    Dec10 [label="dec10\n5×5 ConvTranspose", fillcolor=lightgray];
+    NDCT [label="NDCT (Normal‑dose CT)", fillcolor=lightgoldenrod];
+
+    // Main flow
+    LDCT -> CEELPA;
+    CEELPA -> Enc1;
+    CEELPA -> E2 [label="contrast_mask", style=dashed, color=gray];
+    CEELPA -> E4 [label="edge_mask", style=dashed, color=gray];
+    Enc1 -> E2;
+    E2 -> E3;
+    E3 -> E4;
+    E4 -> Bottleneck;
+    Bottleneck -> Dec6;
+    Dec6 -> Dec7;
+    Dec7 -> Dec8;
+    Dec8 -> Dec9;
+    Dec9 -> Dec10;
+    Dec10 -> NDCT;
+
+    // Skip connections
+    E4 -> Dec6 [label="skip E4 → dec6", style=dashed, color=darkgreen];
+    E2 -> Dec8 [label="skip E2 → dec8", style=dashed, color=darkgreen];
+
+    // Residual connection
+    LDCT -> NDCT [label="residual", style=dashed, color=red];
+}

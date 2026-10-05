@@ -1,0 +1,6 @@
+checkpoint,psnr_mean,psnr_std,ssim_mean,ssim_std,rmse_mean,rmse_std
+proposed_model_no_ceelpa_best.pth,35.5123,0.152221,0.9213,0.015667,0.0169,0.000421
+proposed_model_no_rca_best.pth,34.5651,0.444712,0.9001,0.015798,0.0188,0.002915
+proposed_model_no_msfe_best.pth,35.1850,0.150615,0.9152,0.015703,0.0175,0.000418
+proposed_model_best.pth,35.8313,0.674058,0.9272,0.011337,0.0162,0.001148
+proposed_model_epo50_best.pth,36.1676,0.787760,0.9291,0.011446,0.0156,0.001263
