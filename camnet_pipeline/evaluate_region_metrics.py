@@ -52,7 +52,7 @@ EXPERIMENTS = {
     ('RED-CNN', 'red_cnn', 'red_cnn_mayo', 34.1926),
     ('Improved RED-CNN-CSA', 'improved_red_cnn_csa', 'improved_red_cnn_csa_mayo', 34.0253),
     ('LEDA', 'leda', 'leda_mayo', 34.2183), ('U-Former', 'uformer', 'uformer_mayo', 33.8891),
-    ('CT-Former', 'ctformer', 'ctformer_mayo', 31.9778), ('CAMNet', 'proposed_model', 'proposed_model_mayo_100ep', 34.3062)],
+    ('CT-Former', 'ctformer', 'ctformer_mayo', 31.9778), ('CAMNet', 'proposed_model', 'proposed_model_mayo', 34.3062)],
  'piglet': [
     ('Noisy Input', 'noisy', None, 30.6480), ('NLM', 'nlm_a', None, 30.9434), ('BM3D', 'bm3d_a', None, 30.2468),
     ('DnCNN', 'dncnn', 'dncnn_piglet', 30.8500), ('EDCNN', 'edcnn', 'edcnn_piglet', 31.3286),
@@ -60,7 +60,7 @@ EXPERIMENTS = {
     ('Improved RED-CNN-CSA', 'improved_red_cnn_csa', 'improved_red_cnn_csa_piglet', 31.4254),
     ('LEDA', 'leda', 'leda_piglet', 31.2803), ('U-Former', 'uformer', 'uformer_piglet', 31.1489),
     ('CT-Former', 'ctformer', 'ctformer_piglet', 31.2857),
-    ('CAMNet', 'proposed_model', 'proposed_model_piglet_100ep_wd1e-5', 31.5771)],
+    ('CAMNet', 'proposed_model', 'proposed_model_piglet', 31.5771)],
  'loss_ablation': [
     ('RED-CNN (baseline)', 'red_cnn', 'red_cnn_final_journal_run', 35.5880),
     ('Huber only', 'proposed_model', 'proposed_model_abl_huber', 36.1545),

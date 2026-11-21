@@ -50,8 +50,8 @@ NLM and BM3D need the `bm3d` and `scikit-image` packages and run on the CPU, so 
 | Experiment | CAMNet | Baselines |
 |---|---|---|
 | covid | `proposed_model_epo50_best.pth` | `dncnn`, `edcnn`, `red_cnn_final_journal_run`, `improved_red_cnn_csa`, `ctformer`, `leda`, `uformer` (`*_best.pth`) |
-| mayo | `proposed_model_mayo_100ep_best.pth` | the same baselines with the `_mayo` suffix (`red_cnn_mayo`, ...) |
-| piglet | `proposed_model_piglet_100ep_wd1e-5_best.pth` | the same baselines with the `_piglet` suffix |
+| mayo | `proposed_model_mayo_best.pth` | the same baselines with the `_mayo` suffix (`red_cnn_mayo`, ...) |
+| piglet | `proposed_model_piglet_best.pth` | the same baselines with the `_piglet` suffix |
 | loss_ablation | `proposed_model_epo50_best.pth` (SGH) | `proposed_model_abl_{huber,ssim,gradient,huber_ssim,huber_gradient,ssim_gradient}_best.pth`, `red_cnn_final_journal_run_best.pth` |
 | ceepa_ablation | `proposed_model_epo50_best.pth` | `proposed_model_no_ceelpa_ablation_run_best.pth` (w/o CEEPA) |
 
